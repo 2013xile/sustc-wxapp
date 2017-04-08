@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<import src="template.wxml"/>
+
+<view wx:if="{{!login}}" class="container">
+  <form bindsubmit="login">
+    <view class="section">
+      <input type="text" name="username" placeholder="Student ID" />
+    </view>
+    <view class="section">
+      <input password="true" type="text" name="password" placeholder="Password" />
+    </view>
+    <view class="section">
+      <button form-type="submit">Sign in</button>
+    </view>
+  </form>
+</view>

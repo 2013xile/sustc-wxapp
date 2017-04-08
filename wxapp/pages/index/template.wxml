@@ -1,0 +1,3 @@
+<template name="test">
+  <text>{{ name }}</text>
+</template>
