@@ -14,3 +14,7 @@
     </view>
   </form>
 </view>
+
+<view wx:if="{{login}}">
+<text>你好，{{ name }}</text>
+</view>

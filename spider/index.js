@@ -12,9 +12,11 @@ app.get('/', function (req, res) {
 
 app.post('/login', function (req, res) {
   var newUser = new User(req.body)
-  var loginUrl = 'https://cas.sustc.edu.cn/cas/login?service=http%3A%2F%2Fjwxt.sustc.edu.cn%2Fjsxsd%2F'
+  var loginUrl = 'https://cas.sustc.edu.cn/cas/login'
   newUser.login(loginUrl).then((response) => {
-    res.send(response)
+    var $ = cheerio.load(response)
+    var name = $('#msg p').text().split(',')[0]
+    res.send(name)
   })
 })
 

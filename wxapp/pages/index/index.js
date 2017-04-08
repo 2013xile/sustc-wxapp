@@ -3,6 +3,7 @@
 var app = getApp()
 Page({
   data: {
+    name: '',
     login: false
   },
   //事件处理函数
@@ -11,8 +12,11 @@ Page({
       url: 'http://localhost:3000/login',
       data: e.detail.value,
       method: 'POST', 
-      success: function(res){
-        console.log(res)
+      success: (res) => {
+        this.setData({
+          name: res.data,
+          login: true
+        })
       },
       fail: function(res) {
         // fail
