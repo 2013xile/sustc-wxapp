@@ -1,0 +1,26 @@
+.classtable {
+  width: 100%;
+}
+.class-row, .day-row {
+  display: flex;
+  flex-direction: row;
+}
+.day-cell, .class-cell {
+  font-size: 30rpx;
+}
+.day-cell {
+  padding: 25rpx;
+  width: calc(100% / 7);
+  background-color: #eee;
+}
+.class-cell {
+  border-radius: 7rpx;
+  box-shadow: 0rpx 1rpx 1rpx #eee;
+  height: auto;
+  padding: 20rpx 0;
+  width: calc(100% / 7)
+}
+.info {
+  width: 90%;
+  padding-left: 15rpx;
+}

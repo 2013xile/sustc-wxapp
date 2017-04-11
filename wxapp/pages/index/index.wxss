@@ -1,12 +1,22 @@
 /**index.wxss**/
-input {
-    width: 500rpx;
-    padding: 10px;
-    border: 1px solid #eee;
-    margin: 20rpx;
-    border-radius: 5px;
-    font-size: 32rpx;
+.card, .menu {
+   margin: 50rpx 80rpx;
+   padding: 50rpx;
+   box-shadow: 0 1rpx 1rpx rgba(0, 0, 0, 0.3);
+   border-radius: 5px;
 }
-button {
-    width: 540rpx;
+.menu {
+    padding: 0;
+}
+.menu-item {
+    padding: 20rpx 40rpx;
+    font-size: 35rpx;
+    border-bottom: 1px solid #eee;
+}
+.name {
+    font-size: 50rpx;
+    margin-bottom: 30rpx;
+}
+.logout-btn {
+    margin-top: 30rpx;
 }

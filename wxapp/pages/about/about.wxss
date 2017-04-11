@@ -1,0 +1,9 @@
+.title {
+  font-weight: bold;
+  margin-top: 50rpx;
+}
+.content {
+  width: 80%;
+  font-size: 35rpx;
+  line-height: 50rpx;
+}

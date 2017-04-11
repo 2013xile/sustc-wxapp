@@ -1,0 +1,29 @@
+.score, .card {
+  margin: 50rpx 80rpx;
+  box-shadow: 0 1rpx 1rpx rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+.card {
+  padding: 50rpx;
+}
+.gpanum {
+  font-size: 80rpx;
+  margin-top: 20rpx;
+}
+.score-item {
+  padding: 20rpx 40rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+}
+.subject {
+  width: 75%;
+}
+.weight, .level {
+  width: 15%;
+  text-align: center;
+}
+.picker {
+  font-size: 35rpx;
+  margin-bottom: 20rpx;
+}

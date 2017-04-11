@@ -4,22 +4,8 @@ var app = getApp()
 Page({
   data: {
     load: false,
-    user: {
-      name: '',
-      id: ''
-    },
-    menu: [{
-        name: '课程表',
-        link: '../class/class'
-      },
-      {
-        name: '成绩单',
-        link: '../score/score'
-      },
-      {
-        name: '关于',
-        link: '../about/about'
-      }],
+    day: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+    classTable: [],
     msg: ''
   },
   //事件处理函数
@@ -28,7 +14,7 @@ Page({
       wx.redirectTo({url: '../login/login'})
     } else {
       wx.request({
-        url: 'http://localhost:3000/',
+        url: 'http://localhost:3000/class',
         data: {
           username: wx.getStorageSync('username'),
           password: wx.getStorageSync('password')
@@ -37,10 +23,7 @@ Page({
         success: (res) => {
           this.setData({
             load: true,
-            user: {
-              name: res.data,
-              id: wx.getStorageSync('username')
-            }
+            classTable: res.data
           })
         },
         fail: (res) => {
@@ -50,11 +33,5 @@ Page({
         }
       })
     }
-  },
-  logout: function () {
-    wx.removeStorageSync('LoginSessionKey')
-    wx.removeStorageSync('username')
-    wx.removeStorageSync('password')
-    wx.redirectTo({ url: '../login/login' })
   }
 })

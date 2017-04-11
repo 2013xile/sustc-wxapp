@@ -1,20 +1,27 @@
-<!--index.wxml-->
+<!--import-->
 <import src="template.wxml"/>
 
-<view wx:if="{{!login}}" class="container">
-  <form bindsubmit="login">
-    <view class="section">
-      <input type="text" name="username" placeholder="Student ID" />
+<!--load successfully-->
+<view wx:if="{{ load }}" >
+  <view class="card">
+    <view class="name">
+      <text>{{ user.name }}</text>
     </view>
-    <view class="section">
-      <input password="true" type="text" name="password" placeholder="Password" />
+    <view class="id">
+      <text>学号: {{ user.id }}</text>
     </view>
-    <view class="section">
-      <button form-type="submit">Sign in</button>
+    <view>
+      <button size="mini" plain="true" class="logout-btn" bindtap="logout">注销</button>
     </view>
-  </form>
+  </view>
+  <view class="menu">
+    <view wx:for="{{ menu }}" wx:for-item="item">
+      <navigator  class="menu-item" url="{{ item.link }}">{{ item.name }}</navigator>
+    </view>
+  </view>
 </view>
 
-<view wx:if="{{login}}">
-<text>你好，{{ name }}</text>
+<!--load failed-->
+<view wx:if="{{ !load }}">
+  <text>{{ msg }}</text>
 </view>

@@ -1,0 +1,20 @@
+<!--load successfully-->
+<view wx:if="{{ load }}" class="classtable">
+  <view class="day-row">
+    <view wx:for="{{ day }}" wx:for-item="name"  class="day-cell">
+      <text>{{ name }}</text>
+    </view>
+  </view>
+  <view wx:for="{{ classTable }}" wx:for-item="classes" class="class-row">
+    <view wx:for="{{ classes }}" wx:for-item="class" class="class-cell">
+      <view class="info">
+        <text>{{ class.subject }}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--load failed-->
+<view wx:if="{{ !load }}">
+  <text>{{ msg }}</text>
+</view>

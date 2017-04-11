@@ -1,0 +1,13 @@
+<view class="container">
+  <form bindsubmit="login">
+    <view class="section">
+      <input type="text" name="username" placeholder="Student ID" />
+    </view>
+    <view class="section">
+      <input password="true" type="text" name="password" placeholder="Password" />
+    </view>
+    <view class="section">
+      <button plain="true" form-type="submit">Sign in</button>
+    </view>
+  </form>
+</view>
