@@ -1,5 +1,10 @@
+<!--loading-->
+<view wx:if="{{ load == 'loading' }}" class="loading">
+  <image style="width: 100px; height: 100px" src="../../imgs/loading.gif"></image>
+</view>
+
 <!--load successfully-->
-<view wx:if="{{ load }}" class="classtable">
+<view wx:if="{{ load == true }}" class="classtable">
   <view class="day-row">
     <view wx:for="{{ day }}" wx:for-item="name"  class="day-cell">
       <text>{{ name }}</text>

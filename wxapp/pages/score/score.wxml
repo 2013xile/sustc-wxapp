@@ -1,5 +1,10 @@
+<!--loading-->
+<view wx:if="{{ load == 'loading' }}" class="loading">
+  <image style="width: 100px; height: 100px" src="../../imgs/loading.gif"></image>
+</view>
+
 <!--load successfully-->
-<view wx:if="{{ load }}">
+<view wx:if="{{ load == true }}">
   <view class="card">
     <picker bindchange="pickTerm" value="{{ i }}" range="{{ terms }}">
       <view class="picker">

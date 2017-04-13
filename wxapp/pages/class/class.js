@@ -3,7 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    load: false,
+    load: 'loading',
     day: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     classTable: [],
     msg: ''
@@ -28,6 +28,7 @@ Page({
         },
         fail: (res) => {
           this.setData({
+            load: false,
             msg: '程序出错'
           })
         }

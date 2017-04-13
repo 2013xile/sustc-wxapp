@@ -1,4 +1,8 @@
 /**index.wxss**/
+.warn {
+  font-size: 30rpx;
+  color: #ff0000;
+}
 input {
     width: 500rpx;
     padding: 10px;
@@ -9,4 +13,10 @@ input {
 }
 button {
     width: 540rpx;
+}
+.state {
+    margin-top: 30rpx;
+    line-height: 40rpx;
+    width: 500rpx;
+    font-size: 30rpx;
 }

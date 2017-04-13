@@ -1,4 +1,11 @@
-<view class="container">
+<!--loading-->
+<view wx:if="{{ load == 'loading' }}" class="loading">
+  <image style="width: 100px; height: 100px" src="../../imgs/loading.gif"></image>
+</view>
+
+<!--load successfully-->
+<view class="container" wx:if="{{ load == true }}">
+  <text class="warn">{{ warn }}</text>
   <form bindsubmit="login">
     <view class="section">
       <input type="text" name="username" placeholder="Student ID" />
@@ -10,4 +17,12 @@
       <button plain="true" form-type="submit">Sign in</button>
     </view>
   </form>
+  <view class="state">
+    <text>注: 使用cas账号密码登录。本程序使用爬虫抓取信息，不接入数据库，作者承诺不会储存任何个人信息</text>
+  </view>
+</view>
+
+<!--load failed-->
+<view wx:if="{{ !load }}">
+  <text>{{ msg }}</text>
 </view>

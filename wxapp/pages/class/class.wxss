@@ -15,12 +15,12 @@
 }
 .class-cell {
   border-radius: 7rpx;
-  box-shadow: 0rpx 1rpx 1rpx #eee;
+  border: 1px solid #eee;
   height: auto;
   padding: 20rpx 0;
   width: calc(100% / 7)
 }
 .info {
   width: 90%;
-  padding-left: 15rpx;
+  padding-left: 10rpx;
 }

@@ -1,8 +1,4 @@
-<!--import-->
-<import src="template.wxml"/>
-
-<!--load successfully-->
-<view wx:if="{{ load }}" >
+<view>
   <view class="card">
     <view class="name">
       <text>{{ user.name }}</text>
@@ -19,9 +15,4 @@
       <navigator  class="menu-item" url="{{ item.link }}">{{ item.name }}</navigator>
     </view>
   </view>
-</view>
-
-<!--load failed-->
-<view wx:if="{{ !load }}">
-  <text>{{ msg }}</text>
 </view>

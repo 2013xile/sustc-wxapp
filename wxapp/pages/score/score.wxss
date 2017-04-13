@@ -1,6 +1,6 @@
 .score, .card {
   margin: 50rpx 80rpx;
-  box-shadow: 0 1rpx 1rpx rgba(0, 0, 0, 0.3);
+  border: 1px solid #eee;
   border-radius: 5px;
 }
 .card {

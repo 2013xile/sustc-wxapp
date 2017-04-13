@@ -3,7 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    load: false,
+    load: 'loading',
     GPA: '',
     terms: [],
     i: '0',
@@ -45,6 +45,7 @@ Page({
         },
         fail: (res) => {
           this.setData({
+            load: false,
             msg: '程序出错'
           })
         }
