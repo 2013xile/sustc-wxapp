@@ -1,7 +1,9 @@
 var app = getApp()
 Page({
   data: {
-    load: true,
+    tmpl: {
+      load: true
+    },
     warn: ''
   },
   //事件处理函数
@@ -13,7 +15,9 @@ Page({
       return
     } 
     this.setData({
-      load: 'loading'
+      tmpl: {
+        load: 'loading'
+      }
     })
     wx.request({
       url: 'http://localhost:3000/',
@@ -25,7 +29,9 @@ Page({
       success: (res) => {
         if (!res.data) {
           this.setData({
-            load: true,
+            tmpl: {
+              load: true
+            },
             warn: '学号或者密码错误'
           })
           return
@@ -39,8 +45,9 @@ Page({
       },
       fail: (res) => {
         this.setData({
-          load: false,
-          msg: '程序出错'
+          tmpl: {
+            load: false
+          }
         })
       }
     })

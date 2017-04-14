@@ -1,14 +1,14 @@
+<import src="../template.wxml" />
+
 <!--loading-->
-<view wx:if="{{ load == 'loading' }}" class="loading">
-  <image style="width: 100px; height: 100px" src="../../imgs/loading.gif"></image>
-</view>
+<template is="loading" data="{{ ...tmpl }}" />
 
 <!--load successfully-->
-<view wx:if="{{ load == true }}">
+<view wx:if="{{ tmpl.load == true }}">
   <view class="card">
-    <picker bindchange="pickTerm" value="{{ i }}" range="{{ terms }}">
-      <view class="picker">
-        {{ terms[i] }}
+    <picker  class="picker" bindchange="pickTerm" value="{{ i }}" range="{{ terms }}">
+      <view>
+        {{ terms[i] }} ▾
       </view>
     </picker>
     <view>
@@ -35,6 +35,4 @@
 </view>
 
 <!--load failed-->
-<view wx:if="{{ !load }}">
-  <text>{{ msg }}</text>
-</view>
+<template is="error" data="{{ ...tmpl }}" />

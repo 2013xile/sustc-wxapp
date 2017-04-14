@@ -26,4 +26,8 @@
 .picker {
   font-size: 35rpx;
   margin-bottom: 20rpx;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10rpx;
+  width: 230rpx;
 }

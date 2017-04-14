@@ -3,10 +3,11 @@
 var app = getApp()
 Page({
   data: {
-    load: 'loading',
+    tmpl: {
+      load: 'loading'
+    },
     day: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-    classTable: [],
-    msg: ''
+    classTable: []
   },
   //事件处理函数
   onLoad: function () {
@@ -22,14 +23,17 @@ Page({
         method: 'POST', 
         success: (res) => {
           this.setData({
-            load: true,
+            tmpl: {
+              load: true
+            },
             classTable: res.data
           })
         },
         fail: (res) => {
           this.setData({
-            load: false,
-            msg: '程序出错'
+            tmpl: {
+              load: false
+            },
           })
         }
       })

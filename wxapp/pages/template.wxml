@@ -1,0 +1,17 @@
+<template name="loading">
+  <view wx:if="{{ load == 'loading' }}" class="loading">
+    <image style="width: 100px; height: 100px" src="../../imgs/loading.gif"></image>
+    <view>
+      <text>作者是个穷逼，买的服务器太烂，至今还没反应过来</text>
+    </view>
+  </view>
+</template>
+
+<template name="error">
+  <view wx:if="{{ !load }}" class="error">
+    <image style="width: 32px; height: 32px" src="../../imgs/error.png"></image>
+    <view>
+      <text>服务器出了点小问题，请联系作者解决</text>
+    </view>
+  </view>
+</template>

@@ -3,12 +3,13 @@
 var app = getApp()
 Page({
   data: {
-    load: 'loading',
+    tmpl: {
+      load: 'loading'
+    },
     GPA: '',
     terms: [],
     i: '0',
-    scoreTable: [],
-    msg: ''
+    scoreTable: []
   },
   //事件处理函数
   onLoad: function () {
@@ -24,7 +25,9 @@ Page({
         method: 'POST', 
         success: (res) => {
           this.setData({
-            load: true,
+            tmpl: {
+              load: true
+            },
             scoreTable: res.data
           })
           //储存学期
@@ -45,8 +48,9 @@ Page({
         },
         fail: (res) => {
           this.setData({
-            load: false,
-            msg: '程序出错'
+            tmpl: {
+              load: false
+            }
           })
         }
       })

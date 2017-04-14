@@ -1,10 +1,10 @@
+<import src="../template.wxml" />
+
 <!--loading-->
-<view wx:if="{{ load == 'loading' }}" class="loading">
-  <image style="width: 100px; height: 100px" src="../../imgs/loading.gif"></image>
-</view>
+<template is="loading" data="{{ ...tmpl }}" />
 
 <!--load successfully-->
-<view wx:if="{{ load == true }}" class="classtable">
+<view wx:if="{{ tmpl.load == true }}" class="classtable">
   <view class="day-row">
     <view wx:for="{{ day }}" wx:for-item="name"  class="day-cell">
       <text>{{ name }}</text>
@@ -20,6 +20,4 @@
 </view>
 
 <!--load failed-->
-<view wx:if="{{ !load }}">
-  <text>{{ msg }}</text>
-</view>
+<template is="error" data="{{ ...tmpl }}" />

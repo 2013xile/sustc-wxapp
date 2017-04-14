@@ -1,10 +1,10 @@
+<import src="../template.wxml" />
+
 <!--loading-->
-<view wx:if="{{ load == 'loading' }}" class="loading">
-  <image style="width: 100px; height: 100px" src="../../imgs/loading.gif"></image>
-</view>
+<template is="loading" data="{{ ...tmpl }}" />
 
 <!--load successfully-->
-<view class="container" wx:if="{{ load == true }}">
+<view class="container" wx:if="{{ tmpl.load == true }}">
   <text class="warn">{{ warn }}</text>
   <form bindsubmit="login">
     <view class="section">
@@ -23,6 +23,4 @@
 </view>
 
 <!--load failed-->
-<view wx:if="{{ !load }}">
-  <text>{{ msg }}</text>
-</view>
+<template is="error" data="{{ ...tmpl }}" />

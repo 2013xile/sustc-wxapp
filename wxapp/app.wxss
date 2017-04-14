@@ -8,6 +8,8 @@
   padding: 100rpx 0;
   box-sizing: border-box;
 } 
-.loading {
-  padding: 300rpx 270rpx;
+.loading, .error {
+  padding: 300rpx 100rpx;
+  text-align: center;
+  font-size: 25rpx;
 }
