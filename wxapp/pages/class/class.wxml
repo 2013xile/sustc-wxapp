@@ -12,8 +12,11 @@
   </view>
   <view wx:for="{{ classTable }}" wx:for-item="classes" class="class-row">
     <view wx:for="{{ classes }}" wx:for-item="class" class="class-cell">
-      <view class="info">
+      <view class="info subject">
         <text>{{ class.subject }}</text>
+      </view>
+      <view class="info">
+        <text>{{ class.room }}</text>
       </view>
     </view>
   </view>

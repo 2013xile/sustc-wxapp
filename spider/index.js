@@ -34,13 +34,22 @@ app.post('/class', function (req, res) {
       var reg = new RegExp('[A-Z0-9]{32}(\-' + i + '\-1){1}', 'g')
       var id = response.match(reg)
       for (var j = 0, k = 0; j < id.length; j++, k = k + 2) {
+        var subject = ''
+        var room = ''
         var classdetail = $('#' + id[k]).text()
         if (!classdetail) break
-        var classinfo = {
-          subject: classdetail
+        if (classdetail !== ' ') {
+          subject = classdetail.match(/[\D]+(\d{1}习题课)?/)[0]
+          room = classdetail.match(/\){1}[^-]+/)[0].slice(1)
         }
+        var classinfo = {
+          subject: subject,
+          room: room
+        }
+        console.log(classinfo.room)
         if (classTable[j] === undefined) classTable[j] = []
         classTable[j].push(classinfo)
+        console.log(classTable)
       }
     }
     res.send(classTable)

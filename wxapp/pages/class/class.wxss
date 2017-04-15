@@ -18,9 +18,12 @@
   border: 1px solid #eee;
   height: auto;
   padding: 20rpx 0;
-  width: calc(100% / 7)
+  width: calc(100% / 7);
 }
 .info {
   width: 90%;
   padding-left: 10rpx;
+}
+.subject {
+  margin-bottom: 15rpx;
 }

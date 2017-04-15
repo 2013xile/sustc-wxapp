@@ -6,9 +6,9 @@
 <!--load successfully-->
 <view wx:if="{{ tmpl.load == true }}">
   <view class="card">
-    <picker  class="picker" bindchange="pickTerm" value="{{ i }}" range="{{ terms }}">
-      <view>
-        {{ terms[i] }} ▾
+    <picker class="picker" bindchange="pickTerm" value="{{ i }}" range="{{ terms }}">
+      <view class="pick-text">
+        {{ terms[i] }}
       </view>
     </picker>
     <view>
@@ -25,7 +25,7 @@
       <text class="level">等级</text>
     </view>
     <view wx:for="{{ scoreTable }}" wx:key="*this">
-      <view wx:if="{{ item.term == terms[i] }}" class="score-item">
+      <view wx:if="{{ item.term == terms[i] || terms[i] == '所有学期' }}" class="score-item">
         <text class="subject">{{ item.subject }}</text>
         <text class="weight">{{ item.weight }}</text>
         <text class="level">{{ item.level }}</text>

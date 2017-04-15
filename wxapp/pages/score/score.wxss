@@ -24,10 +24,16 @@
   text-align: center;
 }
 .picker {
-  font-size: 35rpx;
+  font-size: 30rpx;
   margin-bottom: 20rpx;
   border: 1px solid #aaa;
   border-radius: 5px;
   padding: 10rpx;
-  width: 230rpx;
+  width: 250rpx;
+  position: relative;
+}
+.pick-text::after{
+  content: '▾';
+  position: absolute;
+  right: 10rpx;
 }

@@ -32,7 +32,7 @@ Page({
           })
           //储存学期
           var termid = ''
-          var terms = []
+          var terms = ['所有学期']
           for(var i = 0; i < this.data.scoreTable.length; i++) {
             var term = this.data.scoreTable[i].term
             if (term !== termid) {
@@ -61,51 +61,52 @@ Page({
     var score = 0;
     var totalWeight = 0;
     this.data.scoreTable.forEach((item, index) => {
-      if (item.term === this.data.terms[this.data.i]) {
-        var weight = parseInt(item.weight)
-        switch(item.level){
-          case 'A+':
-            score += 4.00 * weight
-            break
-          case 'A':
-            score += 3.94 * weight
-            break
-          case 'A-':
-            score += 3.85 * weight
-            break;
-          case 'B+':
-            score += 3.73 * weight
-            break;
-          case 'B':
-            score += 3.55 * weight
-            break;
-          case 'B-':
-            score += 3.32 * weight
-            break;
-          case 'C+':
-            score += 3.09 * weight
-            break;
-          case 'C':
-            score += 2.78 * weight
-            break;
-          case 'C-':
-            score += 2.42 * weight
-            break;
-          case 'D+':
-            score += 2.08 * weight
-            break;
-          case 'D':
-            score += 1.63 * weight
-            break;
-          case 'D-':
-            score += 1.15 * weight
-            break;
-          case 'F':
-            score += 0 * weight
-            break;
-        }
-        totalWeight += weight
+      if (item.term !== this.data.terms[this.data.i] && this.data.terms[this.data.i] !== '所有学期') {
+        return
       }
+      var weight = parseInt(item.weight)
+      switch(item.level){
+        case 'A+':
+          score += 4.00 * weight
+          break
+        case 'A':
+          score += 3.94 * weight
+          break
+        case 'A-':
+          score += 3.85 * weight
+          break;
+        case 'B+':
+          score += 3.73 * weight
+          break;
+        case 'B':
+          score += 3.55 * weight
+          break;
+        case 'B-':
+          score += 3.32 * weight
+          break;
+        case 'C+':
+          score += 3.09 * weight
+          break;
+        case 'C':
+          score += 2.78 * weight
+          break;
+        case 'C-':
+          score += 2.42 * weight
+          break;
+        case 'D+':
+          score += 2.08 * weight
+          break;
+        case 'D':
+          score += 1.63 * weight
+          break;
+        case 'D-':
+          score += 1.15 * weight
+          break;
+        case 'F':
+          score += 0 * weight
+          break;
+      }
+      totalWeight += weight
     })
     gpa = score / totalWeight
     this.setData({
