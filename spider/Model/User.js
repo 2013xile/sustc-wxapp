@@ -3,7 +3,7 @@ var cheerio = require('cheerio')
 
 function User (obj) {
   this.loginMsg = obj
-  this.cas_url = 'https://cas.sustc.edu.cn/cas/login'
+  this.cas_url = 'https://cas.sustc.edu.cn/cas/login?locale=zh_CN'
 }
 
 User.prototype = {

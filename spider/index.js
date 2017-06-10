@@ -46,10 +46,8 @@ app.post('/class', function (req, res) {
           subject: subject,
           room: room
         }
-        console.log(classinfo.room)
         if (classTable[j] === undefined) classTable[j] = []
         classTable[j].push(classinfo)
-        console.log(classTable)
       }
     }
     res.send(classTable)
