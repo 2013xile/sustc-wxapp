@@ -74,7 +74,8 @@ app.post('/score', function (req, res) {
         term: rawData[i + 1],
         subject: rawData[i + 3],
         level: rawData[i + 4].match(/[A-Z]{1}(\+|\-)?/)[0],
-        weight: rawData[i + 5]
+        weight: rawData[i + 5],
+        toCal: 'score-item'
       }
       data.push(scoreInfo)
     }

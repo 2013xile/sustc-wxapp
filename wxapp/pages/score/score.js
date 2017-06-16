@@ -56,12 +56,28 @@ Page({
       })
     }
   },
+  toCal: function (e) {
+    var i = e.currentTarget.dataset.idx
+    var scoreTable = this.data.scoreTable
+    if (scoreTable[i].toCal == 'score-item'){
+      scoreTable[i].toCal += ' score-item-hover'
+    } else {
+      scoreTable[i].toCal = 'score-item'
+    }
+    this.setData({
+      scoreTable: scoreTable
+    })
+    this.calcGPA()
+  },
   calcGPA: function () {
     var gpa = 0;
     var score = 0;
     var totalWeight = 0;
     this.data.scoreTable.forEach((item, index) => {
       if (item.term !== this.data.terms[this.data.i] && this.data.terms[this.data.i] !== '所有学期') {
+        return
+      }
+      if (item.toCal == 'score-item score-item-hover') {
         return
       }
       var weight = parseInt(item.weight)

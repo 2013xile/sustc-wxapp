@@ -6,6 +6,10 @@
 .card {
   padding: 50rpx;
 }
+.comment {
+  margin: 25rpx 80rpx;
+  font-size: 30rpx;
+}
 .gpanum {
   font-size: 80rpx;
   margin-top: 20rpx;
@@ -15,6 +19,9 @@
   font-size: 30rpx;
   border-bottom: 1px solid #eee;
   display: flex;
+}
+.score-item-hover {
+  background-color: #ccc;
 }
 .subject {
   width: 75%;
