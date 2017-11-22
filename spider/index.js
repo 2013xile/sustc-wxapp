@@ -10,7 +10,7 @@ app.post('/', function (req, res) {
   var newUser = new User(req.body)
   newUser.login().then((response) => {
     var $ = cheerio.load(response)
-    var name = $('#msg p').text().split(',')[0]
+    var name = $('.alert-success p').text().split('，')[0]
     res.send(name)
   })
 })
