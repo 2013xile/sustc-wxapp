@@ -80,6 +80,9 @@ Page({
       if (item.toCal == 'score-item score-item-hover') {
         return
       }
+      if (item.level === 'P' || item.level === 'W') {
+        return
+      }
       var weight = parseInt(item.weight)
       switch(item.level){
         case 'A+':

@@ -66,6 +66,9 @@ app.post('/score', function (req, res) {
     var $ = cheerio.load(response)
     var rawData = []
     var data = []
+    $('#dataList tr td a').each(function(i, item) {
+      console.log($(this).attr('href'))
+    })
     $('#dataList tr td').each(function(i, item) {
       rawData[i] = $(this).text()
     })
