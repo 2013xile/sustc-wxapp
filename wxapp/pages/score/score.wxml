@@ -22,12 +22,14 @@
     <view class="score-item">
       <text class="subject">科目</text>
       <text class="weight">学分</text>
+      <text class="level">成绩</text>
       <text class="level">等级</text>
     </view>
     <view wx:for="{{ scoreTable }}" wx:key="*this" wx:for-index="idx" bindtap="toCal" data-idx="{{idx}}">
       <view wx:if="{{ item.term == terms[i] || terms[i] == '所有学期' }}" class="{{ item.toCal }}">
         <text class="subject">{{ item.subject }}</text>
         <text class="weight">{{ item.weight }}</text>
+        <text class="weight">{{ item.score }}</text>
         <text class="level">{{ item.level }}</text>
       </view>
     </view>

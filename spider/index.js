@@ -66,18 +66,20 @@ app.post('/score', function (req, res) {
     var $ = cheerio.load(response)
     var rawData = []
     var data = []
+    var score = []
     $('#dataList tr td a').each(function(i, item) {
-      console.log($(this).attr('href'))
+      score.push($(this).attr('href').match(/zcj=(\S+)'/)[1])
     })
     $('#dataList tr td').each(function(i, item) {
       rawData[i] = $(this).text()
     })
-    for (var i = 0; i < rawData.length; i = i + 11) {
+    for (var i = 0, j = 0; i < rawData.length; i = i + 11, j++) {
       var scoreInfo = {
         term: rawData[i + 1],
         subject: rawData[i + 3],
         level: rawData[i + 4].match(/[A-Z]{1}(\+|\-)?/)[0],
         weight: rawData[i + 5],
+        score: score[j],
         toCal: 'score-item'
       }
       data.push(scoreInfo)

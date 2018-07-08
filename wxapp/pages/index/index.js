@@ -16,7 +16,7 @@ Page({
         link: '../score/score'
       },
       {
-        name: '关于',
+        name: '关于 & 更新',
         link: '../about/about'
       }],
     msg: ''
